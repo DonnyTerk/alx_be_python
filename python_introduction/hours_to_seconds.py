@@ -1,9 +1,5 @@
-#define the variable for the hour to be converted
+#A script that converts hours to seconds
+
 hours = 2
-seconds_in_hours = 3600
-
-#define the constant
-seconds = hours * seconds_in_hours
-
-#print the result in the specified format
-print(f"{hours} hours(s) is {seconds} seconds.")
+seconds = hours * 3600
+print(seconds)
