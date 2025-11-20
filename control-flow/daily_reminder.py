@@ -1,31 +1,25 @@
-# 1. Prompt for user input
-task = input("Enter a task description for the task: ")
-priority = input("What is the priority (high, medium, low): ").lower()
-time_bound = input("Is the task time-bound? (yes or no): ").lower()
+# daily_reminder.py
 
-# 2. Use Match Case to determine the base reminder message
-base_reminder = ""
-match priority:
+task = input("Task: ")
+time_bound = input("Time Bound: ")
+priority = input("Priority: ")
+
+# Match-case for priority
+match priority.lower():
     case "high":
-        base_reminder = f"REMINDER: Task '{task}' is critical."
+        priority_msg = "This task is high priority."
     case "medium":
-        base_reminder = f"REMINDER: Task '{task}' is important."
+        priority_msg = "This task is medium priority."
     case "low":
-        base_reminder = f"REMINDER: Task '{task}' is a non-urgent item."
+        priority_msg = "This task is low priority."
     case _:
-        base_reminder = f"REMINDER: Task '{task}' has an unknown priority."
+        priority_msg = "Priority not recognized."
 
-# 3. Use an IF statement to add the time sensitivity modifier
-final_reminder = base_reminder # Start with the base message
-
-if time_bound == "yes":
-    # Append the required time-sensitive phrase
-    final_reminder += " This task requires immediate attention today!"
+# If-statement for time-bound tasks
+if time_bound.lower() == "yes":
+    time_msg = "Immediate action is required based on time sensitivity."
 else:
-    # Add a concluding phrase if it is not time-bound
-    final_reminder += " This task can be scheduled for later."
+    time_msg = "No immediate action required."
 
-# 4. Output the final, customized reminder
-print("\n--- YOUR CUSTOMIZED REMINDER ---")
-print(final_reminder)
-print("--------------------------------")
+# Customized reminder print
+print(f"Reminder: {task}. {priority_msg} {time_msg}")
