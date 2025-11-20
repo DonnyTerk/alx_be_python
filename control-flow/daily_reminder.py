@@ -5,7 +5,7 @@ priority = input("Priority (high/medium/low): ")
 time_bound = input("Is it time-bound? (yes/no): ")
 
 # match-case for priority
-match priority.lower():
+match priority:
     case "high":
         priority_msg = "a high priority task"
     case "medium":
