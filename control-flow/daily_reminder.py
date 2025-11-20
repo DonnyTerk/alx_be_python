@@ -16,7 +16,7 @@ match priority:
         priority_msg = "a task with an unknown priority"
 
 # if-statement for time-bound modification
-if time_bound.lower() == "yes":
+if time_bound == "yes":
     time_msg = "that requires immediate attention today!"
 else:
     time_msg = "that does not require immediate action."
