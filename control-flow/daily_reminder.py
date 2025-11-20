@@ -1,7 +1,7 @@
 # 1. Prompt for user input
 task = input("Enter your task: ")
-priority = input("priority (high, medium, low): ").lower()
-time_bound = input("Is it time-bound? (yes or no): ").lower()
+priority = input("Priority(high, medium, low): ").lower()
+time_bound = input("Is it time-bound?(yes or no): ").lower()
 
 # 2. Use Match Case to determine the base reminder message
 base_reminder = ""
