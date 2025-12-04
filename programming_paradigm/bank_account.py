@@ -25,7 +25,7 @@ class BankAccount:
                 self.balance -= amount
                 return True
             else:
-                print("insufficient funds.")
+                print("Insufficient funds.")
                 return False
                 # Depending on requirements, you might need to print an error
                 # or just do nothing if funds are insufficient.
@@ -36,4 +36,4 @@ class BankAccount:
         """
         Prints the current balance.
         """
-        print(f"Current Balance: {self.balance:.2f}")
+        print(f"Current balance: {self.balance:.2f}")
