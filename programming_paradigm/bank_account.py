@@ -1,20 +1,35 @@
-#defining the class for account creation
-class BankAccunt:
-    def __init__(self, initial_balance = 0):
-        self.account_balance = initial_balance
-
-#adding a deposit method
-def deposit(self, amount):
-    self.amount_balance += amount
-
-#Adding the withdrawal method
-def withdraw(self, amount):
-    if amount <= self.account_balance:
-        self.account_balance -= amount
-        return True
-    else:
-        return False
+class BankAccount:
+    """
+    A class that represents a bank account.
+    """
     
-#Adding a display method
-def display_balance(self):
-    print(f"Current balance: ${self.account_balance}")    
+    def __init__(self):
+        """
+        Initialize the bank account with a balance of 0.
+        """
+        self.balance = 0
+
+    def deposit(self, amount):
+        """
+        Adds the amount to the balance.
+        """
+        if amount > 0:
+            self.balance += amount
+
+    def withdraw(self, amount):
+        """
+        Subtracts the amount from the balance if funds are sufficient.
+        """
+        if amount > 0:
+            if self.balance >= amount:
+                self.balance -= amount
+            else:
+                # Depending on requirements, you might need to print an error
+                # or just do nothing if funds are insufficient.
+                pass
+
+    def display_balance(self):
+        """
+        Prints the current balance.
+        """
+        print(f"Current Balance: {self.balance}")
