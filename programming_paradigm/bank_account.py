@@ -3,7 +3,7 @@ class BankAccount:
     A class that represents a bank account.
     """
     
-    def __init__(self):
+    def __init__(self, initial_balance = 0):
         """
         Initialize the bank account with a balance of 0.
         """
