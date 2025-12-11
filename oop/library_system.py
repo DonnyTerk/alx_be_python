@@ -7,15 +7,15 @@ class Book:
         self.title = title
         self.author = author
 
-# __str__ for the base book type
-def __str__(self):
-        return f"Book: '{self.title}' by {self.author}"
-
 # --- Derived Classes (Demonstrate Inheritance) ---
 
 class EBook(Book):
     """Derived class for electronic books."""
-
+    def __init__(self, title: str, author: str, file_size: int):
+        # Call the base class (Book) constructor to initialize title and author
+        super().__init__(title, author)
+        # Initialize the unique attribute
+        self.file_size = file_size
 
     def __str__(self):
         """Custom string for listing EBooks."""
@@ -23,6 +23,11 @@ class EBook(Book):
 
 class PrintBook(Book):
     """Derived class for physical printed books."""
+    def __init__(self, title: str, author: str, page_count: int):
+        # Call the base class (Book) constructor to initialize title and author
+        super().__init__(title, author)
+        # Initialize the unique attribute
+        self.page_count = page_count
 
     def __str__(self):
         """Custom string for listing PrintBooks."""
@@ -32,6 +37,14 @@ class PrintBook(Book):
 
 class Library:
     """Manages a collection of various Book objects (Composition)."""
+    def __init__(self):
+        # Attribute 'books' is a list to store the instances. This is Composition.
+        self.books = []
+
+    def add_book(self, book):
+        """Adds a Book, EBook, or PrintBook instance to the collection."""
+        self.books.append(book)
+        print(f"Added: '{book.title}' to the library.")
 
     def list_books(self):
         """Prints the details of every book in the library."""
