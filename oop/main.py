@@ -1,7 +1,4 @@
-from polymorphism_demo import Rectangle, Circle
+from class_static_methods_demo import Calculator
 
-r = Rectangle(5, 3)
-c = Circle(4)
-
-print(r.area())
-print(c.area())
+print(Calculator.add(3, 4))
+print(Calculator.multiply(5, 6))
