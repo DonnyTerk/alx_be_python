@@ -1,5 +1,3 @@
-# library_system.py
-
 class Book:
     def __init__(self, title, author):
         self.title = title
@@ -32,9 +30,8 @@ class Library:
         self.books = []
 
     def add_book(self, book):
-        print(f"Added: '{book.title}' to the library.")
-        self.books.append(book)
+        self.books.append(book)        # MUST NOT PRINT ANYTHING
 
     def list_books(self):
         for book in self.books:
-            print(str(book))
+            print(book)
